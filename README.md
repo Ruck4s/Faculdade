@@ -3,4 +3,4 @@
 
 
 ## Observações:
-** Baixar [driver](https://dev.mysql.com/downloads/connector/j/) JDBC do MySQL
+**Baixar [driver](https://dev.mysql.com/downloads/connector/j/) JDBC do MySQL
