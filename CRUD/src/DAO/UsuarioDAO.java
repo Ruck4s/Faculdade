@@ -34,4 +34,32 @@ public class UsuarioDAO {
         }
 
     }
+     public ArrayList<UserDTO> searchUser() {
+        String sql = "Select * from users";
+        
+         conn = new ConnectionDAO().connectBD();
+        
+        try {
+            pstm = conn.prepareStatement(sql);
+            rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                UserDTO objUserDTO = new UserDTO();
+                objUserDTO.setId(rs.getInt("id"));
+                objUserDTO.setName(rs.getString("name"));
+                objUserDTO.setEmail(rs.getString("email"));
+                objUserDTO.setCpf(rs.getString("cpf"));
+                objUserDTO.setPhone(rs.getString("phone"));
+                objUserDTO.setPassword(rs.getString("password"));
+                
+                list.add(objUserDTO);
+            }
+            
+        } catch (SQLException error) {
+            JOptionPane.showMessageDialog(null, "UserDAO Search" + error);
+        }
+        
+      return list;
+    }
+}
 }
