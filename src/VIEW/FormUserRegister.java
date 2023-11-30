@@ -1,4 +1,3 @@
-
 package VIEW;
 
 import DAO.UserDAO;
@@ -22,7 +21,7 @@ public class FormUserRegister extends JFrame implements ActionListener{
     JTextField fieldPassword;
     
     JButton registerButton;
-    JButton cancelButton;
+    JButton backButton;
 
     FormUserRegister() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,7 +52,7 @@ public class FormUserRegister extends JFrame implements ActionListener{
         contentPane.add(fieldEmail, gbc);
             
         registerButton = createButton("Cadastrar");
-        cancelButton = createButton("Cancelar");
+        backButton = createButton("Voltar");
         
         
         gbc.gridwidth = 1;
@@ -65,7 +64,7 @@ public class FormUserRegister extends JFrame implements ActionListener{
         contentPane.add(fieldPassword, gbc);
 
         gbc.gridy = 4;
-        contentPane.add(createFlexContainer(registerButton, cancelButton), gbc);
+        contentPane.add(createFlexContainer(registerButton, backButton), gbc);
 
         this.addWindowListener(new WindowAdapter() {
             @Override
@@ -79,6 +78,10 @@ public class FormUserRegister extends JFrame implements ActionListener{
         this.pack();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
+    }
+
+    FormUserRegister(FormUserLogin aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     private JTextField createFlexField(String placeholder) {
@@ -171,8 +174,11 @@ public class FormUserRegister extends JFrame implements ActionListener{
         
         UserDAO obtUserDao = new UserDAO();
         obtUserDao.registerUser(objUserDto);
-        } else if (e.getSource() == cancelButton) {
+        } else if (e.getSource() == backButton) {
             this.setVisible(false);
+            FormUserLogin formUserLogin = new FormUserLogin();
+            formUserLogin.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            formUserLogin.setVisible(true);
         }
     }
 }
