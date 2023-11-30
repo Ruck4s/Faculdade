@@ -2,6 +2,7 @@ package VIEW;
 
 import DAO.UserDAO;
 import DTO.UserDTO;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -13,13 +14,19 @@ public class RegisteredUsers extends JFrame {
     private JTable table;
     private DefaultTableModel model;
     private JButton deleteButton;
+    private JButton backButton;
 
     public RegisteredUsers() {
         super("Registered Users");
 
-        String[] columnNames = {"id", "nome", "email", "cpf", "telefone"};
-        model = new DefaultTableModel(columnNames, 0);
+        try {
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
+        String[] columnNames = {"ID", "Nome", "Email", "CPF", "Telefone"};
+        model = new DefaultTableModel(columnNames, 0);
 
         table = new JTable(model);
 
@@ -48,14 +55,29 @@ public class RegisteredUsers extends JFrame {
             }
         });
 
+        backButton = new JButton("Voltar");
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                FormUserLogin formUserLogin = new FormUserLogin();
+                formUserLogin.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                formUserLogin.setVisible(true);
+            }
+        });
+
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        buttonPanel.add(deleteButton);
+        buttonPanel.add(backButton);
+
         JPanel panel = new JPanel(new BorderLayout());
-        panel.add(deleteButton, BorderLayout.NORTH);
+        panel.add(buttonPanel, BorderLayout.NORTH);
         panel.add(scrollPane, BorderLayout.CENTER);
 
         add(panel);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(500, 300);
+        setSize(600, 400);
         setLocationRelativeTo(null);
         setVisible(true);
 

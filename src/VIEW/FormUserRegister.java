@@ -174,6 +174,11 @@ public class FormUserRegister extends JFrame implements ActionListener{
         
         UserDAO obtUserDao = new UserDAO();
         obtUserDao.registerUser(objUserDto);
+        
+        this.setVisible(false);
+        FormUserLogin formUserLogin = new FormUserLogin();
+        formUserLogin.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        formUserLogin.setVisible(true);
         } else if (e.getSource() == backButton) {
             this.setVisible(false);
             FormUserLogin formUserLogin = new FormUserLogin();
