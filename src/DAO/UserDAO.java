@@ -113,6 +113,34 @@ public class UserDAO {
             e.printStackTrace();
         }
     }
+    public void updateUser(UserDTO objUserDto) {
+    String SQLCommand = "UPDATE users SET name=?, email=?, cpf=?, phone=?, password=? WHERE id=?";
+
+    conn = new ConnectionDAO().connectBD();
+
+    try {
+        pstm = conn.prepareStatement(SQLCommand);
+        pstm.setString(1, objUserDto.getName());
+        pstm.setString(2, objUserDto.getEmail());
+        pstm.setString(3, objUserDto.getCpf());
+        pstm.setString(4, objUserDto.getPhone());
+        pstm.setString(5, objUserDto.getPassword());
+        pstm.setString(6, objUserDto.getId());
+
+        pstm.executeUpdate();
+        
+    } catch (SQLException erro) {
+        JOptionPane.showMessageDialog(null, "UserDAO Update" + erro);
+    } finally {
+        try {
+            if (pstm != null) pstm.close();
+            if (conn != null) conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
 }
 
 }
