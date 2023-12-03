@@ -10,11 +10,13 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class FormUserLogin extends JFrame implements ActionListener{
@@ -126,10 +128,8 @@ public void actionPerformed(ActionEvent e) {
         // Autentique o usuário no banco de dados
         UserDAO userDAO = new UserDAO();
         if (userDAO.authenticateUser(email, password)) {
-            this.setVisible(false);
-            RegisteredUsers registeredUsers = new RegisteredUsers();
-            registeredUsers.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            registeredUsers.setVisible(true);
+            // Usuário autenticado com sucesso, exibir tela de opções
+               showOptionsScreen();
         } else {
           JOptionPane.showMessageDialog(this, "Usuário não encontrado. Verifique suas credenciais.", "Erro de Autenticação", JOptionPane.ERROR_MESSAGE);
         }
@@ -140,5 +140,11 @@ public void actionPerformed(ActionEvent e) {
             formUserRegister.setVisible(true);
         }
     }
-    
+     private void showOptionsScreen() {
+        // Criar e exibir a tela de opções após o login
+        OptionsScreen optionsScreen = new OptionsScreen();
+        optionsScreen.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        optionsScreen.setVisible(true);
+        this.setVisible(false);
+    }
 }

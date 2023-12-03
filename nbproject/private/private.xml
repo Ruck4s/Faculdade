@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/danie/Documents/NetBeansProjects/users_crud_mysql/src/VIEW/FormUserRegister.java</file>
-            <file>file:/C:/Users/danie/Documents/NetBeansProjects/users_crud_mysql/src/VIEW/FormUserLogin.java</file>
-            <file>file:/C:/Users/danie/Documents/NetBeansProjects/users_crud_mysql/src/VIEW/Main.java</file>
+            <file>file:/C:/Users/danie/Documents/NetBeansProjects/users_crud_mysql/src/DTO/CarDTO.java</file>
+            <file>file:/C:/Users/danie/Documents/NetBeansProjects/users_crud_mysql/src/VIEW/OptionsScreen.java</file>
+            <file>file:/C:/Users/danie/Documents/NetBeansProjects/users_crud_mysql/src/DAO/UserDAO.java</file>
+            <file>file:/C:/Users/danie/Documents/NetBeansProjects/users_crud_mysql/src/DTO/UserDTO.java</file>
+            <file>file:/C:/Users/danie/Documents/NetBeansProjects/users_crud_mysql/src/DAO/CarDAO.java</file>
+            <file>file:/C:/Users/danie/Documents/NetBeansProjects/users_crud_mysql/src/VIEW/RegisteredUsers.java</file>
+            <file>file:/C:/Users/danie/Documents/NetBeansProjects/users_crud_mysql/src/VIEW/CarsView.java</file>
+            <file>file:/C:/Users/danie/Documents/NetBeansProjects/users_crud_mysql/src/VIEW/AddCarForm.java</file>
+            <file>file:/C:/Users/danie/Documents/NetBeansProjects/users_crud_mysql/src/VIEW/EditCarForm.java</file>
         </group>
     </open-files>
 </project-private>
