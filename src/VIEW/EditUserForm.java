@@ -33,17 +33,8 @@ public class EditUserForm extends JFrame {
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                currentUser.setName(nameField.getText());
-                currentUser.setEmail(emailField.getText());
-                currentUser.setCpf(cpfField.getText());
-                currentUser.setPhone(phoneField.getText());
-
-                UserDAO userDAO = new UserDAO();
-                userDAO.updateUser(currentUser);
-
-                parentFrame.updateUserInTable(currentUser);
-
-                dispose();
+                updateUserData();
+                dispose();  
             }
         });
 
@@ -65,5 +56,17 @@ public class EditUserForm extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(300, 200);
         setLocationRelativeTo(null);
+    }
+
+    private void updateUserData() {
+        currentUser.setName(nameField.getText());
+        currentUser.setEmail(emailField.getText());
+        currentUser.setCpf(cpfField.getText());
+        currentUser.setPhone(phoneField.getText());
+
+        UserDAO userDAO = new UserDAO();
+        userDAO.updateUser(currentUser);
+
+        parentFrame.updateUserInTable(currentUser);
     }
 }
