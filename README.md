@@ -14,7 +14,7 @@ O sistema é composto por:
 - **Para utilizar o sistema é necessário baixar o WAMPSERVER e MySQL connector. Além de criar o banco de dados crud_db.**
 - **Baixar arquivos que estão na pasta utilitários.**
 
-## Integrantes do grupo:
+## Integrantes do grupo 13:
 
 - Daniel Benício Matias de Araújo, RA 822160985.
 - Gustavo Alexandre Ruckert, RA 822144341.
