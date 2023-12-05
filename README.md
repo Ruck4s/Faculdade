@@ -9,7 +9,7 @@ O sistema é composto por:
 - Além de validações de CPF e Email repetidos.
 
 ## Observações:
-- **Baixar [driver](https://dev.mysql.com/downloads/connector/j/) JDBC do MySQL.**
+- **Baixar [driver](https://dev.mysql.com/downloads/connector/j/) JDBC do MySQL, e adicionar na pasta "libraries" no NetBeans para ser realizado a conexão.**
 - **Projeto desenvolvido utilizando as ferramentas: WAMPSERVER, Beekeeper Studio, MySQL Workbench, Apache NetBeans.**
 - **Para utilizar o sistema é necessário baixar o WAMPSERVER e MySQL connector. Além de criar o banco de dados crud_db.**
 - **Baixar arquivos que estão na pasta utilitários.**
