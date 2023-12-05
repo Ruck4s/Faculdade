@@ -10,7 +10,8 @@ O sistema é composto por:
 
 ## Observações:
 - **Baixar [driver](https://dev.mysql.com/downloads/connector/j/) JDBC do MySQL.**
-- **Projeto elaborado utilizando as ferramentas: MySQL Workbench, Apache NetBeans.**
+- **Projeto desenvolvido utilizando as ferramentas: WAMPSERVER, Beekeeper Studio, MySQL Workbench, Apache NetBeans.**
+- **Para utilizar o sistema é necessário baixar o WAMPSERVER e MySQL connector. Além de criar o banco de dados crud_db.**
 
 ## Integrantes do grupo:
 
