@@ -13,7 +13,7 @@ O sistema é composto por:
 - **Projeto desenvolvido utilizando as ferramentas: WAMPSERVER, Beekeeper Studio, MySQL Workbench, Apache NetBeans.**
 - **Para utilizar o sistema é necessário baixar o WAMPSERVER e MySQL connector. Além de criar o banco de dados crud_db.**
 - **Baixar arquivos que estão na pasta utilitários.**
-
+https://sourceforge.net/projects/wampserver/files/WampServer%203/WampServer%203.0.0/wampserver3.3.2_x64.exe/download
 ## Integrantes do grupo 13:
 
 - Daniel Benício Matias de Araújo, RA 822160985.
