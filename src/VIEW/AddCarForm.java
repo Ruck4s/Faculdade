@@ -19,37 +19,37 @@ public class AddCarForm extends JFrame {
     private JTextField car_conditionField;
 
     public AddCarForm(CarsView parentView) {
-        super("Add Car");
+        super("Adicionar Carro");
 
         this.parentView = parentView;
 
         setLayout(new GridLayout(5, 2));
 
-        JLabel brandLabel = new JLabel("Brand:");
+        JLabel brandLabel = new JLabel("Marca:");
         brandField = new JTextField();
 
-        JLabel modelLabel = new JLabel("Model:");
+        JLabel modelLabel = new JLabel("Modelo:");
         modelField = new JTextField();
 
-        JLabel versionLabel = new JLabel("Version:");
+        JLabel versionLabel = new JLabel("Versão:");
         versionField = new JTextField();
 
-        JLabel conditionLabel = new JLabel("Condition:");
+        JLabel conditionLabel = new JLabel("Condição:");
         car_conditionField = new JTextField();
 
-        JButton addButton = new JButton("Add");
+        JButton addButton = new JButton("Adicionar");
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (validateFields()) {
                     addCar();
                 } else {
-                    JOptionPane.showMessageDialog(AddCarForm.this, "All fields must be filled.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(AddCarForm.this, "Todos os campos precisam ser preenchidos.", "Erro de validação", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
 
-        JButton backButton = new JButton("Back");
+        JButton backButton = new JButton("Voltar");
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

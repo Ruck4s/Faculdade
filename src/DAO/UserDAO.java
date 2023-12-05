@@ -47,7 +47,7 @@ public class UserDAO {
 
             rs = pstm.executeQuery();
 
-            return rs.next(); // Se houver um próximo, o usuário existe
+            return rs.next();
 
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "UserDAO" + erro);

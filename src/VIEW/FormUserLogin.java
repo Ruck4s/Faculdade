@@ -121,14 +121,11 @@ public class FormUserLogin extends JFrame implements ActionListener{
  @Override
 public void actionPerformed(ActionEvent e) {
     if(e.getSource() == loginButton) {
-        // Obtenha os dados dos campos de entrada
         String email = fieldEmail.getText();
         String password = fieldPassword.getText();
 
-        // Autentique o usuário no banco de dados
         UserDAO userDAO = new UserDAO();
         if (userDAO.authenticateUser(email, password)) {
-            // Usuário autenticado com sucesso, exibir tela de opções
                showOptionsScreen();
         } else {
           JOptionPane.showMessageDialog(this, "Usuário não encontrado. Verifique suas credenciais.", "Erro de Autenticação", JOptionPane.ERROR_MESSAGE);
@@ -141,7 +138,6 @@ public void actionPerformed(ActionEvent e) {
         }
     }
      private void showOptionsScreen() {
-        // Criar e exibir a tela de opções após o login
         OptionsScreen optionsScreen = new OptionsScreen();
         optionsScreen.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         optionsScreen.setVisible(true);

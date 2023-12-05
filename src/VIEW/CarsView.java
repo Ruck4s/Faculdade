@@ -35,7 +35,7 @@ public class CarsView extends JFrame {
 
         JScrollPane scrollPane = new JScrollPane(table);
 
-        deleteButton = new JButton("Delete Car");
+        deleteButton = new JButton("Deletar Carro");
         deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -58,7 +58,7 @@ public class CarsView extends JFrame {
             }
         });
 
-        editButton = new JButton("Editar Car");
+        editButton = new JButton("Editar Carro");
         editButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -121,10 +121,8 @@ public class CarsView extends JFrame {
     }
 
     private void populateTable() {
-        // Obtém a lista de carros do banco de dados
         ArrayList<CarDTO> carList = carDAO.listCars();
 
-        // Preenche a tabela com os dados da lista de carros
         for (CarDTO car : carList) {
             Object[] row = { car.getId(), car.getBrand(), car.getModel(), car.getVersion(), car.getCarCondition() };
             model.addRow(row);
@@ -133,7 +131,6 @@ public class CarsView extends JFrame {
     
 
      private void deleteSelectedCar(String carId) {
-        // Deleta do banco de dados
         carDAO.deleteCar(carId);
 
         model.setRowCount(0);
@@ -152,12 +149,10 @@ public class CarsView extends JFrame {
         addCarForm.setVisible(true);
     }
 
-    // This method is called when a new car is added to update the table
     public void updateTableAfterAddition(CarDTO newCar) {
         addRow(new String[]{newCar.getId(), newCar.getBrand(), newCar.getModel(), newCar.getVersion(), newCar.getCarCondition()});
     }
 
-    // This method is called when a car is edited to update the table
     public void updateTableAfterEdit(CarDTO updatedCar) {
         for (int i = 0; i < model.getRowCount(); i++) {
             if (model.getValueAt(i, 0).equals(updatedCar.getId())) {

@@ -81,7 +81,7 @@ public class FormUserRegister extends JFrame implements ActionListener{
     }
 
     FormUserRegister(FormUserLogin aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     private JTextField createFlexField(String placeholder) {
