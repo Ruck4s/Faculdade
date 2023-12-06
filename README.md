@@ -15,6 +15,32 @@ O sistema é composto por:
 - **Para utilizar o sistema é necessário baixar o WAMPSERVER e MySQL connector. Além de criar o banco de dados crud_db.**
 - **Baixar arquivos que estão na pasta utilitários.**
 
+- SRIPT MYSQL:
+- SCRIPT MYSQL:
+```sql
+CREATE DATABASE crud_db;
+
+USE crud_db;
+
+CREATE TABLE users (
+    id VARCHAR(255) NOT NULL PRIMARY KEY,
+    name TEXT,
+    email TEXT UNIQUE,
+    cpf TEXT UNIQUE,
+    phone TEXT,
+    password TEXT
+);
+
+CREATE TABLE cars (
+    id VARCHAR(255) NOT NULL PRIMARY KEY,
+    brand TEXT,
+    model TEXT,
+    version TEXT,
+    car_condition TEXT
+);
+```
+
+
 ## Integrantes do grupo 13:
 
 - Daniel Benício Matias de Araújo, RA 822160985.
